@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
  *
  * @Date 2024. 3. 7.
  */
-public class TOBEIMPROVED_G5_7569_토마토_BFS {
+public class G5_7569_토마토_BFS {
 
 	static int[][][] graph;
 	static boolean[][][] visited;
