@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
  *
  * @Date 2024. 3. 19.
  */
-class G5_15686_치킨배달_backTracking {
+class G5_15686_치킨배달_backTrackingCombi {
 
 	static int N, M;
 	static List<int[]> houses, chickens;

@@ -1,23 +1,22 @@
-package exhaustiveSearch;
+package BFSDFS;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class S3_2606_바이러스_DFS  {
+public class S3_2606_바이러스_BFS  {
 	
 	static List<Integer>[] graph;
-	static boolean[] visited;
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int N = Integer.parseInt(br.readLine());
 		int M = Integer.parseInt(br.readLine());
-		
-		visited = new boolean[N+1];
 		
 		graph = new ArrayList[N+1];
 		graph[1] = new ArrayList<Integer>();
@@ -37,23 +36,32 @@ public class S3_2606_바이러스_DFS  {
 			graph[b].add(a);
 		}
 		
-		DFS(1);
-		System.out.println(answer);
+		System.out.println(BFS());
 	}
-	static int answer = -1;
 	
-	public static void DFS(int curr) {
-		if(visited[curr])
-			return;
+	public static int BFS() {
+		int count = 0;
 		
-		visited[curr] = true;
-		answer++;
+		Queue<Integer> queue = new LinkedList<>();
+		queue.add(1);
+		boolean[] visited = new boolean[graph.length];
 		
-		for(int node:graph[curr]) {
-			if(!visited[node]) {
-				DFS(node);
+		while(!queue.isEmpty()) {
+			int curr = queue.poll();
+			
+			if(visited[curr]==true)
+				continue;
+			
+			count++;
+			visited[curr] = true;
+			
+			for(int node:graph[curr]) {
+				if(!visited[node]) {
+					queue.add(node);
+				}
 			}
 		}
 		
+		return count;
 	}
 }
