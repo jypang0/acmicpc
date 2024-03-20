@@ -12,7 +12,7 @@ import java.io.*;
  *
  * @Date 2024. 3. 16.
  */
-class G5_5430_AC_impl {
+class G5_5430_AC_simulation {
 	public static void main(String[] args) throws IOException {
 		int T = nextInt();
 		StringBuilder sb = new StringBuilder();
