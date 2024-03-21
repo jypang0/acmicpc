@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @Date 2024. 3. 20.
  */
-class G3_14725_개미굴_Trie {
+class G3_14725_개미굴_trie {
 	static Scanner sc = new Scanner(System.in);
 	static StringBuilder sb = new StringBuilder();
 	static Node rootNode = new Node();
