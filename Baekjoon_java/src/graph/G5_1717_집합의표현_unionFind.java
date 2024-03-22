@@ -46,7 +46,7 @@ class G5_1717_집합의표현_unionFind {
 		if (a == b)
 			return;
 		
-		if(a<=b) {
+		if(a<b) {
 			parent[b] = a;
 		} else {
 			parent[a] = b;

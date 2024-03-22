@@ -3,12 +3,57 @@ List<String> listKeySet = new ArrayList<>(map.keySet());
 Collections.sort(listKeySet); // alphabetically ordered key set 완성!
 
 [BFS] 뽑은 다음에 visited처리든 뭐든 해라!
-[dijkstra] 이하 동문
 
 [trie] 진짜 이보다 간단할수는 없다
 Node node = rootNode;
-while(String word:words) {
-	node = node.nextNode.computeIfAbsent(word, k->new Node());
-}
+node = node.nextNode.computeIfAbsent(word, k->new Node());
 
+[dijkstra] class G3_1238_파티_dijkstra
+Node(idx, dist), PQ, no visited
+비교1 : if (dist[curNode.destNode] < curNode.dist)
+비교2 : if (dist[next.destNode] < curNode.dist + next.dist) 
 
+[topology sort] List<Integer>[] map -> map[before].add(i); -> 이전에 행해져야하는 애 다음에 행할걸 저장해야함
+answer1 : answer[i] += time[i]
+answer2 : answer[i] = Math.max(answer[i], time[next]);
+
+[Union find]
+	static void union(int a, int b) {
+		a = find(a);
+		b = find(b);
+
+		if (a == b)
+			return;
+		
+		if(a<b) {
+			parent[b] = a;
+		} else {
+			parent[a] = b;
+		}
+	}
+
+	static int find(int a) {
+		if (parent[a] == a)
+			return a;
+
+		return parent[a] = find(parent[a]);
+	}
+	
+[회전]
+	private static int[][] rotate(int[][] m) {
+		int N = m.length;
+		int M = m[0].length;
+		// 돌린 크기만큼으로 생성해준다.
+		int[][] copyMap = new int[M][N];
+
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				copyMap[j][N - 1 - i] = m[i][j];
+			}
+		}
+
+		// 새로 돌린 배열로 반환해준다.
+		return copyMap;
+	}
+///////////////////////////////
+90도: copyMap[j][N-1-i] = m[i][j];
