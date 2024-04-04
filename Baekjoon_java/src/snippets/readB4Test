@@ -39,7 +39,8 @@ answer2 : answer[i] = Math.max(answer[i], time[next]);
 		return parent[a] = find(parent[a]);
 	}
 	
-[회전]
+	
+[회전] 90도: copyMap[j][N-1-i] = m[i][j];
 	private static int[][] rotate(int[][] m) {
 		int N = m.length;
 		int M = m[0].length;
@@ -55,5 +56,8 @@ answer2 : answer[i] = Math.max(answer[i], time[next]);
 		// 새로 돌린 배열로 반환해준다.
 		return copyMap;
 	}
-///////////////////////////////
-90도: copyMap[j][N-1-i] = m[i][j];
+
+[Priority Queue]
+PriorityQueue<Integer> pq2 = new PriorityQueue<>((a,b)->((n2-a)-(n2-b)));
+-> Local variable n2 defined in an enclosing scope must be final or effectively final	Main.java	/Baekjoon_java/src	line 12	Java Problem
+-> cannot change conditional value within PQ
