@@ -1,9 +1,19 @@
-package dataStruct;
+package impl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-class S4_9012_괄호_Stack {
+/**
+ * @사용알고리즘 구현
+ * @사용자료구조 
+ *  
+ * @배운점
+ * 
+ * @try1
+ *
+ * @Date 4 Apr 2024
+ */
+class S4_9012_괄호_impl {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
