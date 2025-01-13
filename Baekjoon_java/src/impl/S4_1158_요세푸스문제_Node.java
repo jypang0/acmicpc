@@ -1,6 +1,16 @@
 package impl;
 import java.util.Scanner;
 
+/**
+ * @사용알고리즘 
+ * @사용자료구조 
+ *  
+ * @배운점 이런거 할때 제발 엣지케이스 잘 생각하자..
+ * 
+ * @try1
+ *
+ * @Date 13 Jan 2025
+ */
 public class S4_1158_요세푸스문제_Node {
 	public static void main(String[] args) {
 
